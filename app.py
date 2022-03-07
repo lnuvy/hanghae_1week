@@ -10,7 +10,6 @@ import os
 
 load_dotenv()
 
-
 app = Flask(__name__)
 
 client = MongoClient(os.environ.get("MONGO_DB_KEY"))

@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>로그인</title>
 
+    <!--  font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Poor+Story&display=swap" rel="stylesheet">
+
     <!--    JQuery -->
     <script src="/static/js/jquery-3.6.0.min.js"></script>
 
@@ -27,6 +30,17 @@
             const id = $('#userid').val()
             const pw = $('#userpw').val()
 
+            if(id === "") {
+                alert("아이디를 입력해주세요.")
+                $('#userid').focus();
+                return
+            }
+            if(pw === "") {
+                alert("비밀번호를 입력해주세요.")
+                $('#userpw').focus();
+                return
+            }
+
             $.ajax({
                 type: "POST",
                 url: "/api/login",
@@ -46,7 +60,6 @@
                 }
             })
         }
-
     </script>
 
 </head>
@@ -60,7 +73,7 @@
                 <label for="userid">아이디</label>
             </div>
             <div class="input-box">
-                <input id="userpw" type="password" name="userpw" placeholder="비밀번호" required>
+                <input id="userpw" type="password" name="userpw" placeholder="비밀번호" onkeypress="javascript:if(event.keyCode === 13) {login();}" required>
                 <label for="userpw">비밀번호</label>
             </div>
             <div class="login-etc">
