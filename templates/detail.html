@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>jwt 로그인</title>
+    <title>상세 페이지</title>
 
     <!--    JQuery -->
     <script src="/static/js/jquery-3.6.0.min.js"></script>
@@ -15,21 +15,10 @@
     <link rel="stylesheet" href="/static/css/bootstrap.css">
     <script src="/static/js/bootstrap/bootstrap.js"></script>
 
-    <script>
-      function logout(){
-        $.removeCookie('mytoken');
-        alert('로그아웃!')
-        window.location.href='/login'
-      }
-    </script>
-
 </head>
 <body>
     <div class="container">
-        <h1>메인 페이지</h1>
+        <h1>메인에서 카드 클릭시 들어와지는 상세 페이지</h1>
     </div>
-    <button class="btn btn-danger" onclick="logout()">로그아웃</button>
-    <button class="btn btn-primary" onclick="location.href='/mypage'">마이페이지</button>
-    <h4>닉네임: {{nickname}}</h4>
 </body>
 </html>
